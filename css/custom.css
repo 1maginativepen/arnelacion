@@ -1,0 +1,121 @@
+.container {
+    max-width: 960px;
+  }
+  
+  /*
+   * Custom translucent site header
+   */
+  
+  .site-header {
+    background-color: rgba(0, 0, 0, 0.85);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+  .site-header a {
+    color: #d6d6d6;
+    transition: color .15s ease-in-out;
+  }
+  .site-header a:hover {
+    color: #b3b3b3;
+    text-decoration: none;
+  }
+  
+/*
+ * Dummy devices (replace them with your own or something else entirely!)
+ */
+
+.product-device {
+    position: absolute;
+    right: 10%;
+    bottom: -30%;
+    width: 300px;
+    height: 540px;
+    background-color: #333;
+    border-radius: 21px;
+    transform: rotate(30deg);
+  }
+  
+  .product-device::before {
+    position: absolute;
+    top: 10%;
+    right: 10px;
+    bottom: 10%;
+    left: 10px;
+    content: "";
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 5px;
+  }
+  
+  .product-device-2 {
+    top: -25%;
+    right: auto;
+    bottom: 0;
+    left: 5%;
+    background-color: #e5e5e5;
+  }
+  
+  
+  /*
+   * Extra utilities
+   */
+  
+  .flex-equal > * {
+    flex: 1;
+  }
+  @media (min-width: 768px) {
+    .flex-md-equal > * {
+      flex: 1;
+    }
+  } 
+
+  @media (min-width: 768px) {
+    .m-md-3 {
+        margin: 0rem !important;
+    }
+}
+
+.marquee-container {
+    width: 100%;
+    background-color: #f8f9fa00;
+    padding: 15px 0;
+  }
+ 
+  .marquee-content {
+    display: flex;
+    animation: marquee 20s linear infinite;
+  }
+ 
+  .marquee-item {
+    flex: 0 0 auto;
+    padding: 0 20px;
+    font-size: 1.2rem;
+    color: #495057;
+  }
+ 
+  @keyframes marquee {
+    0% {
+      transform: translateX(40%);
+    }
+ 
+    100% {
+      transform: translateX(-100%);
+    }
+  } 
+
+  .bg-trans{
+    color: #333 !important;
+    font-weight: 300;
+    font-size: 15px;
+  }
+
+  .img-icon{
+    width: 20px;
+    margin-right: 10px !important;
+    filter: grayscale(1);
+  }
+
+  .img-icon:hover{ 
+    filter: grayscale(0);
+    width: 30px;
+    transition: width 1s, height 1s;
+  }
