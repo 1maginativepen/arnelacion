@@ -1,5 +1,5 @@
 .container {
-    max-width: 960px;
+    /* max-width: 960px; */
   }
   
   /*
@@ -119,3 +119,4 @@
     width: 30px;
     transition: width 1s, height 1s;
   }
+ 
