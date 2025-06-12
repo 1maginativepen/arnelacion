@@ -111,14 +111,8 @@
   .img-icon{
     width: 20px;
     margin-right: 10px !important;
-    filter: grayscale(1);
-  }
-
-  .img-icon:hover{ 
-    filter: grayscale(0);
-    width: 30px;
-    transition: width 1s, height 1s;
-  }
+    /* filter: grayscale(1); */
+  } 
  
           img {
     max-width: 100%;
