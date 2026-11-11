@@ -1,12 +1,14 @@
 // ---------- Data (edit these to update the site) ----------
 const projects = [
   {
-    title: "Akra Counselling Booking Plugin",
+    title: "Akra Counselling Website & Booking Plugin",
+    gallery: ["images/projects/akra-counselling.png", "images/projects/NDA.svg", "images/projects/NDA.svg"],
     role: "WordPress Developer",
-    desc: "Custom WordPress plugin: bookings saved to a private post type with a status lifecycle, email automation, and an admin settings panel.",
-    details: "A custom booking plugin built for a Sydney-based counselling practice. Booking requests are stored as records in a private WordPress Custom Post Type, so nothing is exposed publicly and everything is manageable from the dashboard.",
+    desc: "Developed the full website for a Sydney counselling practice, plus a custom booking plugin with email automation and an admin panel.",
+    details: "I developed the full website for a Sydney-based counselling practice, then built a custom booking plugin on top of it. Booking requests are stored as records in a private WordPress Custom Post Type, so nothing is exposed publicly and everything is manageable from the dashboard.",
     highlights: [
-      "Private Custom Post Type for booking records",
+      "Full website development",
+      "Custom booking plugin with a private Custom Post Type",
       "Full status lifecycle for each booking",
       "Email automation for clients and the practice",
       "Dedicated admin settings panel"
@@ -14,6 +16,21 @@ const projects = [
     tags: ["WordPress", "PHP", "Elementor"],
     images: 3,
     url: "https://github.com/1maginativepen/Booking-Plugin-for-Akra-Counselling/tree/main/"
+  },
+  {
+    title: "Tornooke Keys",
+    role: "Website Developer",
+    desc: "Full site development and branding for a Sydney key and repair shop, with local and on-page SEO and custom plugins.",
+    details: "A complete website for Tornooke Keys, a one-stop shop in Westfield Mount Druitt, NSW offering car key programming, engraving, shoe and bag repairs, watch services, and more. I handled the full site development and the branding, worked on local and on-page SEO, and developed custom plugins inside the site.",
+    highlights: [
+      "Full website development",
+      "Branding",
+      "Local SEO and on-page SEO",
+      "Custom plugins built into the site"
+    ],
+    tags: ["WordPress", "PHP", "SEO", "Branding"],
+    images: 3,
+    url: "https://tornookekeys.com.au/"
   },
   {
     title: "North America Moving Services",
@@ -92,6 +109,98 @@ const projects = [
     images: 3,
     logo: "images/dakotaq.png",
     url: "https://www.dakotaq.com/"
+  },
+  {
+    title: "Delidori",
+    exp: "exp-delidori",
+    role: "Shopify Developer · 2022–2023",
+    desc: "Shopify store build with product listing and social media management, plus graphic design.",
+    details: "A Shopify website built for Delidori. Beyond the build, I managed product listings, handled social media management, and produced graphic design assets for the brand.",
+    highlights: ["Shopify website development", "Product listing management", "Social media management", "Graphic design"],
+    tags: ["Shopify", "Graphic Design"],
+    images: 3,
+    url: "https://www.delidori.com"
+  },
+  {
+    title: "Your Essential Techs",
+    exp: "exp-yet",
+    role: "WordPress Developer · 2022–2023",
+    desc: "WordPress site development with branding and graphic design.",
+    details: "A WordPress website for Your Essential Techs, delivered together with branding and graphic design so the site and the brand identity matched.",
+    highlights: ["WordPress site development", "Branding", "Graphic design"],
+    tags: ["WordPress", "Branding", "Graphic Design"],
+    images: 3,
+    url: "https://youressentialtechs.com"
+  },
+  {
+    title: "Hyundai Pasig",
+    role: "Front-End Developer · 2021",
+    desc: "Navbar CSS fixes for the Hyundai Pasig website.",
+    details: "Front-end maintenance on the Hyundai Pasig website, focused on diagnosing and fixing navigation bar CSS issues.",
+    highlights: ["Navbar CSS fixes"],
+    tags: ["CSS", "WordPress"],
+    images: 3,
+    url: "https://hyundaipasig.com"
+  },
+  {
+    title: "PalawanPay",
+    role: "Web Developer · 2021",
+    desc: "Data encoding, page design, and navbar CSS fixes.",
+    details: "Work on the PalawanPay website covering data encoding, page design, and fixes to navigation bar CSS issues.",
+    highlights: ["Data encoding", "Page design", "Navbar CSS fixes"],
+    tags: ["CSS", "Web Design"],
+    images: 3,
+    url: "https://www.palawanpay.com"
+  },
+  {
+    title: "Energy Development Corporation",
+    role: "Web Developer · 2021",
+    desc: "Page design and navbar CSS fixes.",
+    details: "Page design and front-end fixes for the Energy Development Corporation website, including navigation bar CSS issues.",
+    highlights: ["Page design", "Navbar CSS fixes"],
+    tags: ["CSS", "Web Design"],
+    images: 3,
+    url: "https://www.energy.com.ph"
+  },
+  {
+    title: "Blockspot.io",
+    role: "WordPress Developer · 2021",
+    desc: "WordPress plugin development and navbar CSS fixes.",
+    details: "Custom WordPress plugin development for Blockspot.io, along with fixes to navigation bar CSS issues.",
+    highlights: ["WordPress plugin development", "Navbar CSS fixes"],
+    tags: ["WordPress", "PHP", "CSS"],
+    images: 3,
+    url: "https://www.blockspot.io"
+  },
+  {
+    title: "Simple Benchtops",
+    role: "WordPress Developer · 2021",
+    desc: "WordPress plugin development and navbar CSS fixes.",
+    details: "Custom WordPress plugin development for Simple Benchtops, an Australian business, plus navigation bar CSS fixes.",
+    highlights: ["WordPress plugin development", "Navbar CSS fixes"],
+    tags: ["WordPress", "PHP", "CSS"],
+    images: 3,
+    url: "https://simplebenchtops.com.au"
+  },
+  {
+    title: "Infinity Homes Australia",
+    role: "WordPress Developer · 2021",
+    desc: "WordPress plugin development and navbar CSS fixes.",
+    details: "Custom WordPress plugin development for Infinity Homes Australia, plus navigation bar CSS fixes.",
+    highlights: ["WordPress plugin development", "Navbar CSS fixes"],
+    tags: ["WordPress", "PHP", "CSS"],
+    images: 3,
+    url: "https://infinityha.com.au"
+  },
+  {
+    title: "NACOE",
+    role: "Front-End Developer · 2021",
+    desc: "National Asset Centre of Excellence: mobile responsiveness and navbar CSS fixes.",
+    details: "Front-end fixes for the National Asset Centre of Excellence (NACOE) website, covering mobile responsiveness issues and navigation bar CSS.",
+    highlights: ["Mobile responsiveness fixes", "Navbar CSS fixes"],
+    tags: ["CSS", "Responsive"],
+    images: 3,
+    url: "https://www.nacoe.com.au"
   }
 ];
 
@@ -140,7 +249,6 @@ const experience = [
     role: "Senior Website Developer",
     org: "Law Office of Arash Khorsandi · California, USA",
     id: "exp-arash",
-    logo: "images/arash-law.png",
     desc: "Converted brand designs into responsive WordPress pages and developed custom plugins for firm-specific needs."
   },
   {
@@ -148,7 +256,6 @@ const experience = [
     role: "Website Developer",
     org: "DakotaQ Internet Services · USA",
     id: "exp-dakotaq",
-    logo: "images/dakotaq.png",
     desc: "Developed WordPress web applications, UI designs, and custom plugins."
   },
   {
@@ -157,6 +264,20 @@ const experience = [
     org: "SmartView Media · Australia",
     id: "exp-smartview",
     desc: "Built WordPress applications, converted UI designs to pages, and developed custom plugins."
+  },
+  {
+    date: "Sep 2021 — Feb 2024",
+    role: "Website Developer, Accounts Manager",
+    org: "Delidori",
+    id: "exp-delidori",
+    desc: "Built and maintained the Shopify store, managed product listings and social media, and produced graphic design assets."
+  },
+  {
+    date: "Jun 2021 — Jan 2023",
+    role: "Senior Website Engineer",
+    org: "Your Essential Techs",
+    id: "exp-yet",
+    desc: "Developed the WordPress site and handled branding and graphic design."
   }
 ];
 
@@ -165,6 +286,7 @@ const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">"
 
 document.getElementById("projects").innerHTML = projects.map((p, i) => `
   <button class="project reveal" data-anim="${i % 2 ? 'fadeInRight' : 'fadeInLeft'}" type="button" data-index="${i}" aria-haspopup="dialog">
+    <img class="cover" src="${esc(p.gallery ? p.gallery[0] : "images/projects/NDA.svg")}" alt="${esc(p.title)} preview" loading="lazy">
     ${p.logo ? `<img class="logo" src="${esc(p.logo)}" alt="${esc(p.title)} logo" loading="lazy">` : ""}
     <h3>${esc(p.title)}</h3>
     <p>${esc(p.desc)}</p>
@@ -191,7 +313,6 @@ document.getElementById("timeline").innerHTML = experience.map((e) => `
       <div class="org">${esc(e.org)}</div>
       <p class="desc">${esc(e.desc)}</p>
     </div>
-    ${e.logo ? `<img class="logo" src="${esc(e.logo)}" alt="${esc(e.org.split(" · ")[0])} logo" loading="lazy">` : ""}
   </li>`).join("");
 
 document.getElementById("year").textContent = new Date().getFullYear();
@@ -249,35 +370,12 @@ document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 document.getElementById("theme-toggle").addEventListener("click", (e) => play(e.currentTarget, "rubberBand"));
 
 // ---------- Project modal ----------
-// Placeholder image (inline SVG). Replace with real paths, e.g. "images/akra-1.jpg"
-const NDA_TEXT = ["Project Images/screenshot is not available", "due to NDA and company privacy"];
-const placeholder = (p, n) => {
-  const label = p.title;
-  if (p.nda) {
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750">
-      <rect width="1200" height="750" fill="#e9e9e4"/>
-      <g fill="none" stroke="#6b6b66" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="560" y="270" width="80" height="62" rx="10"/>
-        <path d="M578 270v-22a22 22 0 0 1 44 0v22"/>
-      </g>
-      <circle cx="600" cy="301" r="6" fill="#6b6b66"/>
-      <text x="600" y="400" text-anchor="middle" font-family="sans-serif" font-size="32" fill="#141414">${NDA_TEXT[0]}</text>
-      <text x="600" y="446" text-anchor="middle" font-family="sans-serif" font-size="32" fill="#141414">${NDA_TEXT[1]}</text>
-    </svg>`;
-    return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
-  }
-  const tones = ["#e9e9e4", "#dcdcd5", "#f1f1ed"];
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750">
-    <rect width="1200" height="750" fill="${tones[n % tones.length]}"/>
-    <g fill="none" stroke="#9a9a93" stroke-width="3" opacity=".7">
-      <rect x="450" y="255" width="300" height="200" rx="14"/>
-      <circle cx="530" cy="325" r="26"/>
-      <path d="M450 430l90-80 70 60 50-40 90 70"/>
-    </g>
-    <text x="600" y="520" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#6b6b66">${label} · Image ${n + 1}</text>
-  </svg>`;
-  return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
-};
+// Every project image points at this file for now. To use real screenshots, give a
+// project a gallery list, e.g.  gallery: ["images/projects/akra-1.jpg", "images/projects/akra-2.jpg"]
+const DEFAULT_IMG = "images/projects/NDA.svg";
+const NDA_ALT = "Project Images/screenshot is not available due to NDA and company privacy";
+const imgCount = (p) => (p.gallery ? p.gallery.length : p.images);
+const imgSrc = (p, n) => (p.gallery && p.gallery[n]) || DEFAULT_IMG;
 
 const modal = document.getElementById("project-modal");
 const els = {
@@ -296,10 +394,10 @@ const els = {
 let current = null, slide = 0, lastTrigger = null;
 
 function showSlide(n, animate = true) {
-  const total = current.images;
+  const total = imgCount(current);
   slide = (n + total) % total;
-  els.main.src = placeholder(current, slide);
-  els.main.alt = current.nda ? NDA_TEXT.join(" ") : `${current.title} screenshot ${slide + 1} of ${total} (placeholder)`;
+  els.main.src = imgSrc(current, slide);
+  els.main.alt = imgSrc(current, slide) === DEFAULT_IMG ? NDA_ALT : `${current.title} screenshot ${slide + 1} of ${total}`;
   els.count.textContent = `${slide + 1} / ${total}`;
   els.thumbs.querySelectorAll("button").forEach((b, i) => b.classList.toggle("active", i === slide));
   if (animate) play(els.main, "fadeIn", { speed: "faster" });
@@ -315,13 +413,13 @@ function openProject(i, trigger) {
   els.details.textContent = current.details;
   els.list.innerHTML = current.highlights.map((h) => `<li>${esc(h)}</li>`).join("");
   els.tags.innerHTML = current.tags.map((t) => `<span>${esc(t)}</span>`).join("");
-  els.thumbs.innerHTML = Array.from({ length: current.images }, (_, n) =>
-    `<button type="button" aria-label="Show image ${n + 1}"><img src="${placeholder(current, n)}" alt=""></button>`).join("");
+  els.thumbs.innerHTML = Array.from({ length: imgCount(current) }, (_, n) =>
+    `<button type="button" aria-label="Show image ${n + 1}"><img src="${imgSrc(current, n)}" alt=""></button>`).join("");
   els.exp.hidden = !current.exp;
   els.exp.dataset.target = current.exp || "";
   els.link.hidden = !current.url;
   if (current.url) els.link.href = current.url;
-  document.querySelector(".gallery").classList.toggle("single", current.images < 2);
+  document.querySelector(".gallery").classList.toggle("single", imgCount(current) < 2);
   showSlide(0, false);
   modal.showModal();
   play(modal.querySelector(".modal-inner"), "zoomIn", { speed: "faster" });
