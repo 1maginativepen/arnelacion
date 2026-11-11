@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PBN Sites — Arnold Elacion Jr.</title>
+  <link rel="icon" href="images/arn.png">
+  <meta name="description" content="A list of PBN websites developed, optimized and maintained by Arnold Elacion Jr.">
+  <!-- Animate.css (https://animate.style) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <style>:root {
+  --bg: #fafaf8;
+  --fg: #141414;
+  --muted: #6b6b66;
+  --line: #e4e4df;
+  --accent: #141414;
+  --max: 880px;
+  --animate-duration: .8s;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+[data-theme="dark"] {
+  --bg: #0f0f0e;
+  --fg: #f1f1ed;
+  --muted: #9a9a93;
+  --line: #262624;
+  --accent: #f1f1ed;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background .3s, color .3s;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* Nav */
+.nav {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 10%;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s;
+}
+.nav.scrolled { border-bottom-color: var(--line); }
+.brand { font-weight: 600; letter-spacing: -.01em; }
+.nav nav { display: flex; align-items: center; gap: 24px; font-size: .92rem; color: var(--muted); }
+.nav nav a:hover { color: var(--fg); }
+#theme-toggle {
+  background: none; border: 1px solid var(--line); color: var(--fg);
+  width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-size: 1rem;
+  transition: transform .3s;
+}
+#theme-toggle:hover { transform: rotate(180deg); }
+
+/* Layout */
+main { padding: 0 10%; }
+section { padding: 88px 0 0; }
+h2 {
+  font-size: .8rem; font-weight: 500; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 32px;
+}
+
+/* Hero */
+.hero { padding-top: 120px; }
+.eyebrow { color: var(--muted); font-size: .95rem; margin-bottom: 20px; }
+h1 {
+  font-size: clamp(2rem, 5.5vw, 3.6rem);
+  line-height: 1.1; letter-spacing: -.03em; font-weight: 600;
+  max-width: 18ch;
+}
+.lead { color: var(--muted); font-size: 1.1rem; max-width: 52ch; margin-top: 24px; }
+.cta { display: flex; gap: 12px; margin-top: 36px; flex-wrap: wrap; }
+.btn {
+  padding: 12px 22px; border-radius: 999px; font-size: .92rem;
+  background: var(--accent); color: var(--bg); border: 1px solid var(--accent);
+  transition: opacity .2s, transform .2s;
+}
+.btn:hover { opacity: .85; transform: translateY(-1px); }
+.btn.ghost { background: transparent; color: var(--fg); border-color: var(--line); }
+.btn.ghost:hover { border-color: var(--fg); opacity: 1; }
+
+/* Skills */
+.skills { padding-top: 64px; }
+.skills ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+.skills li {
+  font-size: .85rem; padding: 6px 14px; border: 1px solid var(--line);
+  border-radius: 999px; color: var(--muted);
+}
+
+/* Projects */
+.projects { border-top: 1px solid var(--line); }
+.project {
+  display: grid; grid-template-columns: 1fr auto; gap: 8px 24px;
+  padding: 28px 0; border-bottom: 1px solid var(--line);
+  transition: padding .3s;
+}
+.project:hover { padding-left: 12px; }
+.project h3 { font-size: 1.15rem; font-weight: 500; letter-spacing: -.01em; }
+.project p { color: var(--muted); font-size: .95rem; grid-column: 1; max-width: 60ch; }
+.project .tags { grid-column: 1; display: flex; gap: 12px; flex-wrap: wrap; font-size: .8rem; color: var(--muted); }
+.project .arrow {
+  grid-column: 2; grid-row: 1 / span 3; align-self: center;
+  font-size: 1.4rem; opacity: 0; transform: translateX(-8px);
+  transition: opacity .3s, transform .3s;
+}
+.project:hover .arrow { opacity: 1; transform: none; }
+.project.static { cursor: default; }
+.project.static:hover { padding-left: 0; }
+.project.static .arrow { display: none; }
+
+/* Timeline */
+.timeline { list-style: none; border-top: 1px solid var(--line); }
+.timeline li {
+  display: grid; grid-template-columns: 180px 1fr; gap: 24px;
+  padding: 24px 0; border-bottom: 1px solid var(--line);
+}
+.timeline .date { color: var(--muted); font-size: .9rem; }
+.timeline h3 { font-size: 1.05rem; font-weight: 500; }
+.timeline .org { color: var(--muted); font-size: .92rem; }
+.timeline .desc { margin-top: 8px; font-size: .92rem; color: var(--muted); max-width: 60ch; }
+
+/* Contact */
+.contact { padding-bottom: 96px; }
+.big-link {
+  display: inline-block; margin-top: 28px;
+  font-size: clamp(1.4rem, 4vw, 2.4rem); letter-spacing: -.02em; font-weight: 500;
+  border-bottom: 2px solid var(--fg); padding-bottom: 4px;
+  transition: opacity .2s;
+}
+.big-link:hover { opacity: .6; }
+.links { display: flex; gap: 24px; margin-top: 32px; color: var(--muted); }
+.links a:hover { color: var(--fg); }
+
+footer {
+  padding: 28px 10%;
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem;
+}
+
+/* Reveal animation */
+/* Hidden until Animate.css plays its entrance (see script.js) */
+.reveal { opacity: 0; }
+.reveal.visible { opacity: 1; }
+
+@media (max-width: 640px) {
+  section { padding-top: 64px; }
+  .hero { padding-top: 72px; }
+  .timeline li { grid-template-columns: 1fr; gap: 4px; }
+  .nav nav { gap: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* Custom tools */
+.section-intro { margin: -12px 0 32px; font-size: 1rem; }
+.tools-grid {
+  display: grid; gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+.tool {
+  display: flex; flex-direction: column; gap: 8px;
+  padding: 24px; border: 1px solid var(--line); border-radius: 14px;
+  transition: border-color .25s, transform .25s;
+}
+a.tool:hover { border-color: var(--fg); transform: translateY(-3px); }
+.tool-icon { font-size: 1.4rem; line-height: 1; }
+.tool h3 { font-size: 1.05rem; font-weight: 500; }
+.tool p { color: var(--muted); font-size: .92rem; flex: 1; }
+.tool .tags { display: flex; gap: 10px; flex-wrap: wrap; font-size: .78rem; color: var(--muted); }
+
+/* Project buttons (open modal) */
+button.project {
+  width: 100%; text-align: left; font: inherit; color: inherit;
+  background: none; border: 0; border-bottom: 1px solid var(--line); cursor: pointer;
+}
+button.project:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+.project .arrow { font-weight: 300; }
+
+/* Modal */
+body.modal-open { overflow: hidden; }
+dialog#project-modal {
+  border: 0; padding: 0; background: transparent; color: var(--fg);
+  width: min(960px, calc(100vw - 32px)); max-height: calc(100vh - 32px);
+  margin: auto; overflow: visible;
+}
+dialog#project-modal::backdrop { background: rgba(10,10,10,.55); backdrop-filter: blur(4px); }
+dialog[open] { animation: pop .3s ease; }
+@keyframes pop { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: none; } }
+.modal-inner {
+  position: relative; background: var(--bg); border: 1px solid var(--line);
+  border-radius: 18px; overflow: hidden;
+}
+.modal-body {
+  display: grid; grid-template-columns: 1.15fr 1fr; gap: 32px; padding: 32px;
+  max-height: calc(100vh - 34px); overflow-y: auto;
+}
+.modal-close {
+  position: absolute; top: 14px; right: 14px; z-index: 3;
+  width: 34px; height: 34px; border-radius: 50%; cursor: pointer;
+  border: 1px solid var(--line); background: var(--bg); color: var(--fg);
+}
+.modal-close:hover { border-color: var(--fg); }
+
+.gallery-stage { position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 16/10; background: var(--line); }
+.gallery-stage img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.g-btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--bg) 90%, transparent); color: var(--fg); cursor: pointer;
+}
+.g-btn.prev { left: 10px; } .g-btn.next { right: 10px; }
+.g-btn:hover { border-color: var(--fg); }
+.g-count {
+  position: absolute; bottom: 10px; right: 10px; font-size: .75rem;
+  padding: 3px 10px; border-radius: 999px; background: color-mix(in srgb, var(--bg) 90%, transparent);
+}
+.g-thumbs { display: flex; gap: 10px; margin-top: 12px; }
+.g-thumbs button {
+  width: 72px; aspect-ratio: 16/10; padding: 0; overflow: hidden; cursor: pointer;
+  border: 2px solid transparent; border-radius: 8px; background: none; opacity: .55;
+  transition: opacity .2s, border-color .2s;
+}
+.g-thumbs button.active, .g-thumbs button:hover { opacity: 1; border-color: var(--fg); }
+.g-thumbs img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gallery.single .g-btn, .gallery.single .g-thumbs, .gallery.single .g-count { display: none; }
+
+.modal-text .eyebrow { margin-bottom: 8px; font-size: .85rem; }
+.modal-text h3 { font-size: 1.6rem; letter-spacing: -.02em; font-weight: 600; line-height: 1.2; }
+.modal-text .lead { font-size: 1rem; margin-top: 14px; }
+.modal-text h4 {
+  margin-top: 24px; font-size: .75rem; font-weight: 500; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--muted);
+}
+.modal-text ul { margin: 10px 0 0; padding-left: 18px; color: var(--muted); font-size: .93rem; }
+.modal-text li { margin-bottom: 6px; }
+.modal-text .tags { display: flex; gap: 12px; flex-wrap: wrap; margin: 20px 0 24px; font-size: .8rem; color: var(--muted); }
+.modal-text .btn { display: inline-block; }
+
+@media (max-width: 760px) {
+  .modal-body { grid-template-columns: 1fr; padding: 20px; gap: 22px; }
+}
+
+/* Selected work: 2-column card grid */
+.projects {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px;
+  border-top: 0;
+}
+.projects .project {
+  position: relative; display: flex; flex-direction: column; gap: 10px;
+  padding: 24px; border: 1px solid var(--line); border-radius: 14px;
+  transition: border-color .25s, transform .25s;
+}
+.projects .project:hover { padding: 24px; border-color: var(--fg); transform: translateY(-3px); }
+.projects .project h3 { padding-right: 28px; }
+.projects .project p { flex: 1; max-width: none; }
+.projects .project .tags { margin-top: 4px; }
+.projects .project .arrow {
+  position: absolute; top: 20px; right: 22px;
+  opacity: .4; transform: none; font-size: 1.3rem;
+}
+.projects .project:hover .arrow { opacity: 1; }
+
+@media (max-width: 640px) {
+  .projects { grid-template-columns: 1fr; }
+}
+
+/* Animate.css drives the modal entrance now */
+dialog[open] { animation: none; }
+.nav.animate__animated { position: sticky; }
+
+/* Hero text spans the full width */
+.hero h1, .hero .lead { max-width: 100%; }
+
+/* Resume download */
+.resume-card {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+  padding: 32px; border: 1px solid var(--line); border-radius: 16px;
+}
+.resume-card h2 { margin-bottom: 12px; }
+.resume-card .lead { margin-top: 0; max-width: 46ch; font-size: 1rem; }
+.resume-card .btn { white-space: nowrap; }
+
+/* Logos */
+.logo {
+  display: block; width: 96px; aspect-ratio: 5 / 3; object-fit: cover;
+  border: 1px solid var(--line); border-radius: 8px; background: #fff;
+}
+.projects .project .logo { margin-bottom: 4px; }
+.timeline li { grid-template-columns: 180px 1fr auto; align-items: start; }
+.timeline li .logo { width: 84px; }
+#modal-logo { margin-bottom: 14px; }
+#modal-logo[hidden] { display: none; }
+@media (max-width: 640px) {
+  .timeline li { grid-template-columns: 1fr; }
+  .timeline li .logo { margin-top: 10px; }
+}
+
+/* Modal actions + experience jump highlight */
+.modal-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.modal-actions .btn { display: inline-block; cursor: pointer; font-family: inherit; }
+.modal-actions [hidden] { display: none; }
+.timeline li { scroll-margin-top: 96px; }
+.timeline li.flash { animation: flash 2.2s ease; }
+@keyframes flash {
+  0%, 60% { background: color-mix(in srgb, var(--fg) 8%, transparent); }
+  100% { background: transparent; }
+}
+
+/* Experience: no company logos */
+.timeline li { grid-template-columns: 180px 1fr; }
+@media (max-width: 640px) { .timeline li { grid-template-columns: 1fr; } }
+
+/* Cover image on top of each Selected work card */
+.projects .project { overflow: hidden; }
+.projects .project .cover {
+  display: block; width: calc(100% + 48px); margin: -24px -24px 8px;
+  aspect-ratio: 16 / 10; object-fit: cover; object-position: top;
+  background: var(--line); border-bottom: 1px solid var(--line);
+  transition: transform .5s ease;
+}
+.projects .project:hover .cover { transform: scale(1.03); }
+.projects .project { isolation: isolate; }
+
+/* Selected work: 3 columns, 2 on tablets, 1 on phones */
+@media (max-width: 1000px) { .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px)  { .projects { grid-template-columns: 1fr; } }
+
+/* Button under Selected work */
+.more-work { display: flex; justify-content: center; margin-top: 40px; }
+
+/* ---------- PBN sites page ---------- */
+.sites-hero { padding-top: 96px; }
+.back-link { display: inline-block; margin-top: 28px; color: var(--muted); font-size: .92rem; transition: color .2s, transform .2s; }
+.back-link:hover { color: var(--fg); transform: translateX(-3px); }
+
+.sites-tools { padding-top: 56px; display: flex; flex-direction: column; gap: 16px; }
+#site-search {
+  width: 100%; font: inherit; font-size: .95rem; color: var(--fg);
+  background: transparent; border: 1px solid var(--line); border-radius: 999px;
+  padding: 12px 20px; outline: none; transition: border-color .2s;
+}
+#site-search::placeholder { color: var(--muted); }
+#site-search:focus { border-color: var(--fg); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  font: inherit; font-size: .85rem; color: var(--muted); cursor: pointer;
+  background: transparent; border: 1px solid var(--line); border-radius: 999px;
+  padding: 6px 14px; transition: color .2s, border-color .2s, background .2s;
+}
+.chip span { opacity: .6; margin-left: 4px; }
+.chip:hover { color: var(--fg); border-color: var(--fg); }
+.chip.active { background: var(--fg); border-color: var(--fg); color: var(--bg); }
+
+.sites-list-wrap { padding: 32px 0 96px; }
+.muted-count { color: var(--muted); font-size: .85rem; margin-bottom: 16px; }
+.sites-list { border-top: 1px solid var(--line); }
+.site-row {
+  display: grid; grid-template-columns: 1fr auto 24px; align-items: center; gap: 24px;
+  padding: 20px 0; border-bottom: 1px solid var(--line); transition: padding .3s;
+}
+.site-row:hover { padding-left: 12px; }
+.site-main h3 { font-size: 1.05rem; font-weight: 500; letter-spacing: -.01em; overflow-wrap: anywhere; }
+.site-main p { color: var(--muted); font-size: .85rem; margin-top: 2px; }
+.site-cat { color: var(--muted); font-size: .85rem; white-space: nowrap; }
+.site-cat { border: 1px solid var(--line); border-radius: 999px; padding: 3px 12px; }
+.site-row .arrow { font-size: 1.2rem; opacity: 0; transform: translateX(-8px); transition: opacity .3s, transform .3s; }
+.site-row:hover .arrow { opacity: 1; transform: none; }
+
+@media (max-width: 760px) {
+  .sites-hero { padding-top: 64px; }
+  .site-row { grid-template-columns: 1fr; gap: 8px; }
+  .site-cat { justify-self: start; }
+  .site-row .arrow { display: none; }
+}
+</style>
+</head>
+<body>
+
+  <header class="nav reveal" data-anim="fadeInDown">
+    <a href="index.html" class="brand">Arnold Elacion Jr.</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#work">Work</a>
+      <a href="index.html#contact">Contact</a>
+      <button id="theme-toggle" aria-label="Toggle dark mode">◐</button>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <section class="hero sites-hero">
+      <p class="eyebrow reveal" data-anim="fadeInDown">PBN Sites</p>
+      <h1 class="reveal">Sites I developed, optimized, and maintained.</h1>
+      <p class="lead reveal">
+        <span id="total-count">30</span> websites across injury law, motorcycle accident law,
+        Spanish-language legal, and niche topics. Built and kept up to date between late 2024 and early 2025.
+      </p>
+      <a class="back-link reveal" href="index.html#work">← Back to selected work</a>
+    </section>
+
+    <section class="sites-tools reveal">
+      <input id="site-search" type="search" placeholder="Search sites…" aria-label="Search sites" autocomplete="off">
+      <div id="site-filters" class="chips" role="group" aria-label="Filter by category"></div>
+    </section>
+
+    <section class="sites-list-wrap">
+      <p id="site-count" class="muted-count" aria-live="polite"></p>
+      <div class="sites-list" id="sites-list"></div>
+      <p id="no-results" class="muted-count" hidden>No sites match your search.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> Arnold Elacion Jr.</span>
+    <span>Zambales, Philippines</span>
+  </footer>
+
+  <script>// ---------- Data (edit these to update the page) ----------
+// category: "Accident law" | "Motorcycle" | "Spanish-language" | "Other"
+const sites = [
+  { domain: "bicycleaccidentattorneys.net", url: "https://www.bicycleaccidentattorneys.net", category: "Accident law", updated: "2024-12-13", note: "Converted to a blog site" },
+  { domain: "californiabraininjuryattorneys.net", url: "https://www.californiabraininjuryattorneys.net", category: "Accident law", updated: "2024-12-13" },
+  { domain: "celebrityinjuries.com", url: "https://www.celebrityinjuries.com", category: "Other", updated: "2024-12-26", note: "Optimized site" },
+  { domain: "constructioninjurylawyer.net", url: "https://www.constructioninjurylawyer.net", category: "Accident law", updated: "2024-12-13" },
+  { domain: "davidcarondesign.com", url: "https://www.davidcarondesign.com", category: "Other", updated: "2024-12-13", note: "Operation Backlink Revival" },
+  { domain: "headoncaraccidents.com", url: "https://www.headoncaraccidents.com", category: "Accident law", updated: "2024-12-13" },
+  { domain: "injuries.wiki", url: "https://www.injuries.wiki", category: "Accident law", updated: "2024-12-13" },
+  { domain: "motorcardriver.com", url: "https://www.motorcardriver.com", category: "Accident law", updated: "2024-12-13" },
+  { domain: "motorcycleaccidentstatistics.com", url: "https://www.motorcycleaccidentstatistics.com", category: "Motorcycle", updated: "2024-12-13" },
+  { domain: "motorcycleaccidentstoday.com", url: "https://www.motorcycleaccidentstoday.com", category: "Motorcycle", updated: "2024-12-13" },
+  { domain: "newdeaths.com", url: "https://newdeaths.com", category: "Other", updated: "2024-12-18", note: "Operation Backlink Revival" },
+  { domain: "orangecountymotorcycleaccidentattorney.com", url: "https://www.orangecountymotorcycleaccidentattorney.com", category: "Motorcycle", updated: "2024-12-13" },
+  { domain: "riversidemotorcycleaccidentlawyer.com", url: "https://www.riversidemotorcycleaccidentlawyer.com", category: "Motorcycle", updated: "2025-02-01" },
+  { domain: "sanbernardinoautoaccidentlawyer.com", url: "https://www.sanbernardinoautoaccidentlawyer.com", category: "Accident law", updated: "2024-12-13" },
+  { domain: "sanbernardinomotorcycleaccidentlawyer.com", url: "https://www.sanbernardinomotorcycleaccidentlawyer.com", category: "Motorcycle", updated: "2024-12-13" },
+  { domain: "sanfranciscomotorcycleaccidentlawyer.net", url: "https://www.sanfranciscomotorcycleaccidentlawyer.net", category: "Motorcycle", updated: "2025-02-01" },
+  { domain: "scooteraccidentlawfirm.com", url: "https://www.scooteraccidentlawfirm.com", category: "Accident law", updated: "2024-12-13" },
+  { domain: "uberaccidentlawyers.net", url: "https://www.uberaccidentlawyers.net", category: "Accident law", updated: "2024-12-13" },
+  { domain: "cliffordcycles.com", url: "https://www.cliffordcycles.com/", category: "Other", updated: "2024-12-26" },
+  { domain: "the-lemon-law.com", url: "https://www.the-lemon-law.com/", category: "Other", updated: "2024-12-13" },
+  { domain: "abogadodeaccidentedecamion.com", url: "https://www.abogadodeaccidentedecamion.com/", category: "Spanish-language", updated: "2024-11-26" },
+  { domain: "abogadodelesion.net", url: "https://www.abogadodelesion.net/", category: "Spanish-language", updated: "2024-11-26" },
+  { domain: "lemonpro.net", url: "https://www.lemonpro.net", category: "Other", updated: "2024-11-28" },
+  { domain: "abogadoparaaccidentes.net", url: "https://www.abogadoparaaccidentes.net/", category: "Spanish-language", updated: "2024-11-30" },
+  { domain: "ibikeblog.net", url: "https://www.ibikeblog.net/", category: "Other", updated: "2024-12-05", note: "Operation Backlink Revival · Site not found" },
+  { domain: "pedestrianaccidentlawyers.net", url: "https://www.pedestrianaccidentlawyers.net/", category: "Accident law", updated: "2025-02-01" },
+  { domain: "sanfranciscoaccidentlawyer.net", url: "http://sanfranciscoaccidentlawyer.net", category: "Accident law", updated: "2025-02-01" },
+  { domain: "abogadoparalesiones.net", url: "https://abogadoparalesiones.net", category: "Spanish-language", updated: "2025-02-01" },
+  { domain: "accidentadvocator.com", url: "https://accidentadvocator.com", category: "Accident law", updated: "2025-02-01" },
+  { domain: "undercover.ink", url: "https://www.undercover.ink/", category: "Other", updated: "2025-02-01" }
+];
+
+const CATEGORIES = ["All", "Accident law", "Motorcycle", "Spanish-language", "Other"];
+
+// ---------- Helpers ----------
+const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const fmtDate = (iso) => new Date(iso + "T00:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+
+function play(el, name, { delay = 0, speed = "" } = {}) {
+  const cls = ["animate__animated", `animate__${name}`];
+  if (speed) cls.push(`animate__${speed}`);
+  el.classList.remove(...[...el.classList].filter((c) => c.startsWith("animate__")));
+  void el.offsetWidth;
+  el.style.animationDelay = delay ? `${delay}ms` : "";
+  el.classList.add(...cls);
+  el.addEventListener("animationend", () => {
+    el.classList.remove(...cls);
+    el.style.animationDelay = "";
+  }, { once: true });
+}
+
+// ---------- State + render ----------
+let category = "All";
+let query = "";
+
+const list = document.getElementById("sites-list");
+const countEl = document.getElementById("site-count");
+const emptyEl = document.getElementById("no-results");
+const filtersEl = document.getElementById("site-filters");
+
+document.getElementById("total-count").textContent = sites.length;
+
+filtersEl.innerHTML = CATEGORIES.map((c) => {
+  const n = c === "All" ? sites.length : sites.filter((s) => s.category === c).length;
+  return `<button type="button" class="chip${c === category ? " active" : ""}" data-cat="${esc(c)}">${esc(c)} <span>${n}</span></button>`;
+}).join("");
+
+function render(animate = false) {
+  const q = query.trim().toLowerCase();
+  const rows = sites.filter((s) =>
+    (category === "All" || s.category === category) &&
+    (!q || s.domain.toLowerCase().includes(q) || (s.note || "").toLowerCase().includes(q)));
+
+  list.innerHTML = rows.map((s) => `
+    <a class="site-row" href="${esc(s.url)}" target="_blank" rel="noopener">
+      <div class="site-main">
+        <h3>${esc(s.domain)}</h3>
+        ${s.note ? `<p>${esc(s.note)}</p>` : ""}
+      </div>
+      <span class="site-cat">${esc(s.category)}</span>
+      <span class="arrow" aria-hidden="true">↗</span>
+    </a>`).join("");
+
+  countEl.textContent = `Showing ${rows.length} of ${sites.length} sites`;
+  emptyEl.hidden = rows.length > 0;
+  if (animate) [...list.children].slice(0, 12).forEach((el, i) => play(el, "fadeInUp", { delay: i * 30, speed: "faster" }));
+}
+
+filtersEl.addEventListener("click", (e) => {
+  const b = e.target.closest(".chip");
+  if (!b) return;
+  category = b.dataset.cat;
+  filtersEl.querySelectorAll(".chip").forEach((c) => c.classList.toggle("active", c === b));
+  render(true);
+});
+document.getElementById("site-search").addEventListener("input", (e) => { query = e.target.value; render(); });
+
+render();
+
+// ---------- Footer year ----------
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// ---------- Theme (shared with the home page) ----------
+const root = document.documentElement;
+const saved = (() => { try { return localStorage.getItem("theme"); } catch { return null; } })();
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+root.dataset.theme = saved || (prefersDark ? "dark" : "light");
+
+document.getElementById("theme-toggle").addEventListener("click", (e) => {
+  const next = root.dataset.theme === "dark" ? "light" : "dark";
+  root.dataset.theme = next;
+  try { localStorage.setItem("theme", next); } catch {}
+  play(e.currentTarget, "rubberBand");
+});
+
+// ---------- Nav border on scroll ----------
+const nav = document.querySelector(".nav");
+const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 8);
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();
+
+// ---------- Reveal on scroll ----------
+const io = new IntersectionObserver((entries) => {
+  let n = 0;
+  entries.forEach((en) => {
+    if (!en.isIntersecting) return;
+    const el = en.target;
+    el.classList.add("visible");
+    play(el, el.dataset.anim || "fadeInUp", { delay: Math.min(n++, 6) * 90 });
+    io.unobserve(el);
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+</script>
+</body>
+</html>
